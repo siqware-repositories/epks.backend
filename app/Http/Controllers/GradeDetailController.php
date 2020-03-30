@@ -11,9 +11,13 @@ class GradeDetailController extends Controller
     {
         return GradeDetail::all();
     }
+    public function indexWithGrade()
+    {
+        return GradeDetail::with('grade')->get();
+    }
     public function create()
     {
-        
+
     }
 
     public function store(Request $request)
@@ -31,17 +35,17 @@ class GradeDetailController extends Controller
 
     public function show($id)
     {
-        
+
     }
 
     public function edit($id)
     {
-        
+
     }
 
     public function update(Request $request, $id)
     {
-        
+
     }
 
     public function destroy($id)

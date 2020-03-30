@@ -17,7 +17,7 @@ class CreateSubjectsTable extends Migration
             $table->id();
             $table->bigInteger('grade_detail_id');
             $table->bigInteger('user_id')->default(1);
-            $table->char('name');
+            $table->string('name');
             $table->longText('description')->nullable()->default('text');
             $table->timestamps();
         });

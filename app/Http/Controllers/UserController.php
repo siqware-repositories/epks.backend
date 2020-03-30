@@ -68,7 +68,7 @@ class UserController extends Controller
         $user->name = $validData['name'];
         $user->email = $validData['email'];
         $user->password = $validData['password'];
-        $user->grade = $validData['grade']['label'];
+        $user->grade = $validData['grade']['value'];
         $user->contact = $validData['contact'];
         $user->role = $validData['grade']['label']=='Teacher'?'teacher':'student';
         $user->status = false;

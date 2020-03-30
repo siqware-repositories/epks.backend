@@ -18,7 +18,7 @@ class CreateUsersTable extends Migration
             $table->string('name',30);
             $table->string('profile',100)->default('images/placeholder/placeholder.png');
             $table->string('role',20)->default('user');
-            $table->string('grade',20)->default('default');
+            $table->integer('grade')->default('0');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

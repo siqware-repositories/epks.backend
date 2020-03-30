@@ -25,5 +25,6 @@ Route::group(['middleware' => 'auth:api'], function () {
 });
 Route::resource('/grade', 'GradeController');
 Route::resource('/grade-detail', 'GradeDetailController');
+Route::get('/grade-detail-with-grade', 'GradeDetailController@indexWithGrade');
 Route::resource('/subject', 'SubjectController');
 Route::resource('/course', 'CourseController');

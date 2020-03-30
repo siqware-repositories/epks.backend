@@ -10,11 +10,11 @@ class GradeController extends Controller
 
     public function index()
     {
-        return Grade::all();
+        return Grade::orderBy('id','desc')->get();
     }
     public function create()
     {
-        
+
     }
 
     public function store(Request $request)
@@ -30,17 +30,17 @@ class GradeController extends Controller
 
     public function show($id)
     {
-        
+
     }
 
     public function edit($id)
     {
-        
+
     }
 
     public function update(Request $request, $id)
     {
-        
+
     }
 
     public function destroy($id)
