@@ -17,7 +17,20 @@ class CourseController extends Controller
     {
 
     }
+    function YoutubeID($url)
+    {
+        if(strlen($url) > 11)
+        {
+            if (preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $url, $match))
+            {
+                return $match[1];
+            }
+            else
+                return false;
+        }
 
+        return $url;
+    }
     public function store(Request $request)
     {
         $validData = $request->validate([
@@ -39,7 +52,7 @@ class CourseController extends Controller
                 'subject_id'=>$store->id,
                 'order'=>$item['order'],
                 'title'=>$item['title'],
-                'url'=>$item['video'],
+                'url'=>'https://www.youtube.com/embed/'.$this->YoutubeID($item['video']),
                 'note'=>$item['note'],
                 'attachment'=>$item['attachment'],
                 'published'=>$item['publish']['value'],
@@ -82,7 +95,7 @@ class CourseController extends Controller
                 'subject_id'=>$store->id,
                 'order'=>$item['order'],
                 'title'=>$item['title'],
-                'url'=>$item['video'],
+                'url'=>'https://www.youtube.com/embed/'.$this->YoutubeID($item['video']),
                 'note'=>$item['note'],
                 'attachment'=>$item['attachment'],
                 'published'=>$item['publish']['value'],
